@@ -1,0 +1,30 @@
+!pip install matplotlib pandas
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Создаем DataFrame из данных
+data = {
+    'date': ['03-10-16', '04-10-16', '05-10-16', '06-10-16', '07-10-16'],
+    'close': [772.559998, 776.429993, 776.469971, 776.859985, 775.080017]
+}
+df = pd.DataFrame(data)
+
+# Преобразуем даты из строк в объекты datetime
+df['date'] = pd.to_datetime(df['date'], format='%d-%m-%y')
+
+# Создаем фигуру и оси
+fig, ax = plt.subplots()
+
+# Строим линейную диаграмму
+ax.plot(df['date'], df['close'])
+
+# Настраиваем сетку
+ax.grid(True, linestyle='-', linewidth=0.5, color='blue')
+
+# Настраиваем оси
+ax.set_xlabel('Date')
+ax.set_ylabel('Close Price')
+ax.set_title('Alphabet Inc. Close Prices from 03-10-16 to 07-10-16')
+
+# Показываем график
+plt.show()
