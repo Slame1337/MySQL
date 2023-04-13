@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+
+# Данные компании Alphabet Inc.
+dates = ['10-03-16', '10-04-16', '10-05-16', '10-06-16', '10-07-16']
+closing_prices = [772.559998, 776.429993, 776.469971, 776.859985, 775.080017]
+
+# Создаем график
+plt.plot(dates, closing_prices, color='blue')
+
+# Добавляем заголовок и метки осей
+plt.title('Цена закрытия акций Alphabet Inc. (03.10.2016 - 07.10.2016)')
+plt.xlabel('Дата')
+plt.ylabel('Цена закрытия акций')
+
+# Показываем график
+plt.show()
